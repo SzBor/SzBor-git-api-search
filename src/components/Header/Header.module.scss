@@ -1,17 +1,16 @@
-.headerSection{
-    background-color:#64D7DC;
-
+.headerSection {
+  background-color: #1b75bc;
 }
 
-.headerSection__body{
-    display:flex;
-    justify-content: center;
-    align-items: center;
-    height: 30vh;
-    width:100%;
-    
+.headerSection__body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 30vh;
+  width: 100%;
 
-    h1{
-        color:white;
-    }
+  h1 {
+    color: white;
+    font-size: 3rem;
+  }
 }

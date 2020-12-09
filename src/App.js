@@ -1,14 +1,32 @@
-import React from "react";
-import styles from "./App.module.scss";
+import React, { useEffect, useState } from "react";
+import Form from "./components/Form/Form";
 import Header from "./components/Header/Header";
+import AppContext from './context';
+import MainView from "./views/MainView";
+
+
+
+const initialStateItems = [
+  {
+    name: "Dan Abramov",
+    description: "React core member",
+  }
+];
+
+
+
 
 function App() {
+
+  const [value, setValue] = useState([...initialStateItems])
+
   return (
     <>
       <Header />
-      <div className={styles.app}>
-     
-      </div>
+      <AppContext.Provider value={value}>
+        <Form />
+        <MainView />
+      </AppContext.Provider>
     </>
   );
 }
