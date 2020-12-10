@@ -55,6 +55,7 @@ function App() {
     handleSubmit: handleSubmit,
     handleSearchChange: handleSearchChange,
     error: error,
+    errorRequest:errorRequest,
   }
 
   console.log(contextElements.error)

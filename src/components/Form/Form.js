@@ -22,10 +22,10 @@ const Form = () => {
                             placeholder="Nazwa na GitHub"
                             required
                         />
-                        <button type="submit"><FontAwesomeIcon icon={faSearch} /></button>
+                        <button><FontAwesomeIcon icon={faSearch} /></button>
                     </form>
-                    {context.error ? <h3>Podano błędną nazwę użtkownika</h3> : <></>}
-                    {context.errorRequest ? <h3>Brak odpowiedzi z servera</h3> : <></>}
+                    {context.error ? <div className={styles.formWrapper__errorBox}><h3>Podano złą nazwę użtkownika</h3></div> : <></>}
+                    {context.errorRequest ? <div className={styles.formWrapper__errorBox}><h3>Brak odpowiedzi z servera</h3></div> : <></>}
 
                 </div>
             )}
