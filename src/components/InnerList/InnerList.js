@@ -1,10 +1,11 @@
 import React from "react";
-import ListItem from "./ListItem";
-import styles from "./List.module.scss";
+import InnerListItem from "./InnerListItem";
+
+import styles from "./InnerList.module.scss";
 
 
 
-const List = ({ items }) => {
+const InnerList = ({ items }) => {
 
     console.log(items)
  
@@ -12,10 +13,10 @@ const List = ({ items }) => {
         <>
             {items.length ? (
                 <div className={styles.listWrapper}>
-                    <h1 className={styles.listWrapper__header}>Ostatnio aktualizowane repozytoria:</h1>
+                    <h1 className={styles.listWrapper__header}>Ostatnie 5 commitów:</h1>
                     <ul>
                         {items.map(item => (
-                            <ListItem key={item.id} {...item} />
+                            <InnerListItem key={item.id} {...item} />
                         )
                         )}
                     </ul>
@@ -28,4 +29,4 @@ const List = ({ items }) => {
 };
 
 
-export default List;
+export default InnerList;

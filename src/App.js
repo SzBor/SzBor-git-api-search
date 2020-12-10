@@ -22,10 +22,10 @@ function App() {
     setUsername(e.target.value)
   }
 
+  
   const handleSubmit = event => {
     event.preventDefault()
-
-    axios.get(`https://api.github.com/users/${username}`)
+    axios.get(`https://api.github.com/users/${username}/repos`,{ params: { sort: "updated", order:"desc",page: 1 } })
       .then(resp => {
         setRepos([...resp.data])
         setUsername('')
@@ -49,13 +49,15 @@ function App() {
         }
 
       })
-
   }
 
   console.log(repos)
 
+
+
+
   const contextElements = {
-    repos: repos,
+    repos: repos.slice(0,5),
     handleSubmit: handleSubmit,
     handleSearchChange: handleSearchChange,
   }
