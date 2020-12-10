@@ -7,9 +7,6 @@ import styles from "./List.module.scss";
 const List = ({ items }) => {
 
 console.log(items)
-console.log(items.lenghth)
-
-
 
     return (
 
@@ -17,7 +14,7 @@ console.log(items.lenghth)
             {items !== null ? (
                 <ul className={styles.listWrapper}>
                     {items.map(item => (
-                        <ListItem key={item.title} props={items} />
+                        <ListItem key={item.id} {...item} />
                     )
                     )}
                 </ul>

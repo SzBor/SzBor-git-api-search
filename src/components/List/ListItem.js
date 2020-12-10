@@ -5,13 +5,13 @@ import Title from '../Title/Title';
 
 const ListItem = (props) => {
  console.log(props)
-console.log(props.name)
+console.log(props.location)
   return (
     <li className={styles.wrapper}>
  
       <div>
-        <Title>witam</Title>
-        <p className={styles.description}>siema</p>
+        <Title>{props.login}</Title>
+        <p className={styles.description}>{props.location}</p>
       </div>
     </li>
   );

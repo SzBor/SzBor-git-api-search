@@ -1,37 +1,34 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import styles from "./Form.module.scss";
-import axios from 'axios';
+import AppContext from '../../context';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSearch } from '@fortawesome/free-solid-svg-icons'
 
 const Form = (props) => {
-    const [username, setUsername] = useState('')
+    const appContext = useContext(AppContext)
 
-    const handleSubmit = event => {
-        event.preventDefault()
+    const { handleSubmit, handleSearchChange } = appContext
 
-        axios
-            .get(`https://api.github.com/users/${username}`)
-            .then(resp => {
-                props.onSubmit(resp.data)
-                setUsername('')
-            })
-    }
+ 
+
+   
 
     return (
-        <div className={styles.formWrapper}>
-            <form className={styles.formWrapper__form} onSubmit={handleSubmit}>
+        <AppContext.Consumer>
+        {context => (
+                <div className={styles.formWrapper}>
+            <form className={styles.formWrapper__form} onSubmit={(e) => handleSubmit(e)}>
                 <input
                     type="text"
-                    value={username}
-                    onChange={event => setUsername(event.target.value)}
+                    onChange={(e) => handleSearchChange(e)}
                     placeholder="GitHub username"
                     required
                 />
 
                 <button type="submit"><FontAwesomeIcon icon={faSearch} /></button>
             </form>
-        </div>
+        </div>)}
+        </AppContext.Consumer>
     )
 }
 
