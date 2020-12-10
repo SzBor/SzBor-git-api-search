@@ -1,6 +1,5 @@
 import React from "react";
 import InnerListItem from "./InnerListItem";
-
 import styles from "./InnerList.module.scss";
 
 
