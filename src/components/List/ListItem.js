@@ -15,7 +15,6 @@ const ListItem = (props) => {
 
       setCommits([...resp.data])
     
- 
   }
 
   useEffect(() => {
@@ -27,11 +26,9 @@ const ListItem = (props) => {
 
   return (
     <>
-
       <li className={styles.wrapper}>
-
         <div>
-          <Title>{props.name}</Title>
+          <Title><span class={styles.wrapper__description}>Nazwa:</span> {props.name}</Title>
           <p className={styles.wrapper__description}>Ostatnia zmiana: {props.updated_at.slice(0, 10)}</p>
         </div>
       </li>

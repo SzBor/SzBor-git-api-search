@@ -1,9 +1,9 @@
-.listWrapper {
-    width: 50vw;
+.innerListWrapper {
+    width: 35vw;
     margin: 0 auto 0;
   }
 
-  .listWrapper__noItems {
+  .innerListWrapper__noItems {
     font-size: 1.2em;
     color: darkgrey;
     display: block;
@@ -12,11 +12,22 @@
     text-align: center;
   }
 
-  .listWrapper__header {
+  .innerListWrapper__header {
     font-size: 1em;
-    color: darkgrey;
+    color: rgb(80, 80, 80);
     display: block;
     width: 100%;
-    margin-top: 20px;
     text-align: left;
+  }
+
+  .innerListWrapper__list{
+
+    li:nth-child(even){
+      background-color:rgba(13, 114, 190, 0.1);
+    }
+
+    li:not(:first-child) {
+      margin-top:3em;
+    }
+
   }

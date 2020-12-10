@@ -9,26 +9,25 @@ const Form = (props) => {
 
     const { handleSubmit, handleSearchChange } = appContext
 
- 
 
-   
+
+
 
     return (
-        <AppContext.Consumer>
-        {context => (
-                <div className={styles.formWrapper}>
+
+        <div className={styles.formWrapper}>
+            <h1>Wpisz nazwę użytkownika</h1>
             <form className={styles.formWrapper__form} onSubmit={(e) => handleSubmit(e)}>
                 <input
                     type="text"
                     onChange={(e) => handleSearchChange(e)}
-                    placeholder="GitHub username"
+                    placeholder="Nazwa na GitHub"
                     required
                 />
 
                 <button type="submit"><FontAwesomeIcon icon={faSearch} /></button>
             </form>
-        </div>)}
-        </AppContext.Consumer>
+        </div>
     )
 }
 

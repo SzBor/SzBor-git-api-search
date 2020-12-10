@@ -1,12 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import Form from "./components/Form/Form";
 import Header from "./components/Header/Header";
 import AppContext from './context';
-import MainView from "./views/MainView";
+import MainView from "./views/MainView/MainView";
 import axios from 'axios';
-
-
-
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import AboutView from "./views/AboutView/AboutView";
 
 
 
@@ -16,22 +15,22 @@ function App() {
   const [error, setError] = useState('')
   const [username, setUsername] = useState('')
 
-
-
   const handleSearchChange = (e) => {
     setUsername(e.target.value)
   }
 
-  
+
   const handleSubmit = event => {
     event.preventDefault()
-    axios.get(`https://api.github.com/users/${username}/repos`,{ params: { sort: "updated", order:"desc",page: 1 } })
+    axios.get(`https://api.github.com/users/${username}/repos`, { params: { sort: "updated", order: "desc", page: 1 } })
       .then(resp => {
         setRepos([...resp.data])
         setUsername('')
       })
       .catch(err => {
         if (error.response) {
+
+          alert('Błąd odpowied')
           // The request was made and the server responded with a status code
           // that falls out of the range of 2xx
           // console.log(error.response.data);
@@ -45,33 +44,29 @@ function App() {
           console.log(error.request);
         } else {
           // Something happened in setting up the request that triggered an Error
-          console.log('Error', error.message);
+          alert('Błąd', error.message);
         }
 
       })
   }
 
-  console.log(repos)
-
-
-
 
   const contextElements = {
-    repos: repos.slice(0,5),
+    repos: repos.slice(0, 5),
     handleSubmit: handleSubmit,
     handleSearchChange: handleSearchChange,
   }
 
-
-
   return (
-    <>
+    <BrowserRouter>
       <Header />
       <AppContext.Provider value={contextElements}>
-        <Form />
-        <MainView />
+        <Switch>
+          <Route exact path="/" component={MainView}/>
+          <Route exact path="/about" component={AboutView}/>
+        </Switch>
       </AppContext.Provider>
-    </>
+    </BrowserRouter>
   );
 }
 

@@ -5,15 +5,13 @@ import styles from "./List.module.scss";
 
 
 const List = ({ items }) => {
-
-    console.log(items)
  
     return (
         <>
             {items.length ? (
                 <div className={styles.listWrapper}>
                     <h1 className={styles.listWrapper__header}>Ostatnio aktualizowane repozytoria:</h1>
-                    <ul>
+                    <ul className={styles.listWrapper__list}>
                         {items.map(item => (
                             <ListItem key={item.id} {...item} />
                         )

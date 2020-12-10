@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import styles from "./InnerListItem.module.scss";
-import Title from '../Title/Title';
+
 
 
 
@@ -17,11 +17,11 @@ const InnerListItem = (props) => {
       <li className={styles.wrapper}>
 
         <div>
-          <Title>{props.commit.author.date.slice(0, 10)}</Title>
-          <p className={styles.wrapper__description}>Treść commita: {props.commit.message}</p>
+          <h5>Data i godzina commita: {props.commit.author.date.slice(0, 10)} {props.commit.author.date.slice(11, 16)}</h5>
+          <p className={styles.wrapper__description}><span>Treść commita:</span> {props.commit.message}</p>
         </div>
       </li>
-      
+
     </>
   );
 };
