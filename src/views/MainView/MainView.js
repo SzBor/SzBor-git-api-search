@@ -5,13 +5,13 @@ import Form from '../../components/Form/Form';
 
 const MainView = () => (
   <>
-  <Form/>
+    <Form />
     <AppContext.Consumer>
       {(context) => (
-        <List items={context.repos}/>
+        <List items={context.repos} />
       )}
     </AppContext.Consumer>
- </>
+  </>
 );
 
 export default MainView;

@@ -1,5 +1,4 @@
-import React, { useState } from "react";
-import Form from "./components/Form/Form";
+import React, { useEffect, useState } from "react";
 import Header from "./components/Header/Header";
 import AppContext from './context';
 import MainView from "./views/MainView/MainView";
@@ -12,7 +11,9 @@ import AboutView from "./views/AboutView/AboutView";
 function App() {
 
   const [repos, setRepos] = useState([])
-  const [error, setError] = useState('')
+  const [error, setError] = useState(false)
+  const [errorRequest, setErrorRequest] = useState(false)
+
   const [username, setUsername] = useState('')
 
   const handleSearchChange = (e) => {
@@ -21,30 +22,28 @@ function App() {
 
 
   const handleSubmit = event => {
+
     event.preventDefault()
     axios.get(`https://api.github.com/users/${username}/repos`, { params: { sort: "updated", order: "desc", page: 1 } })
       .then(resp => {
         setRepos([...resp.data])
         setUsername('')
+        setError(false)
+        setErrorRequest(false)
       })
       .catch(err => {
-        if (error.response) {
+        if (err.response) {
+          console.log(err.response)
 
-          alert('Błąd odpowied')
-          // The request was made and the server responded with a status code
-          // that falls out of the range of 2xx
-          // console.log(error.response.data);
-          // console.log(error.response.status);
-          // console.log(error.response.headers);
-        } else if (error.request) {
-          // The request was made but no response was received
-          // `error.request` is an instance of XMLHttpRequest in the 
-          // browser and an instance of
-          // http.ClientRequest in node.js
-          console.log(error.request);
+          setError(true)
+
+        } else if (err.request) {
+
+          setErrorRequest(true)
+
         } else {
-          // Something happened in setting up the request that triggered an Error
-          alert('Błąd', error.message);
+
+          console.log(error.message);
         }
 
       })
@@ -55,15 +54,18 @@ function App() {
     repos: repos.slice(0, 5),
     handleSubmit: handleSubmit,
     handleSearchChange: handleSearchChange,
+    error: error,
   }
+
+  console.log(contextElements.error)
 
   return (
     <BrowserRouter>
       <Header />
       <AppContext.Provider value={contextElements}>
         <Switch>
-          <Route exact path="/" component={MainView}/>
-          <Route exact path="/about" component={AboutView}/>
+          <Route exact path="/" component={MainView} />
+          <Route exact path="/about" component={AboutView} />
         </Switch>
       </AppContext.Provider>
     </BrowserRouter>

@@ -11,7 +11,7 @@ const List = ({ items }) => {
             {items.length ? (
                 <div className={styles.listWrapper}>
                     <h1 className={styles.listWrapper__header}>Ostatnio aktualizowane repozytoria:</h1>
-                    <ul className={styles.listWrapper__list}>
+                    <ul>
                         {items.map(item => (
                             <ListItem key={item.id} {...item} />
                         )
@@ -19,7 +19,7 @@ const List = ({ items }) => {
                     </ul>
                 </div>
             ) : (
-                    <h1 className={styles.listWrapper__noItems}>Brak repozytoriów tego uzytkownika</h1>
+                    <h1 className={styles.listWrapper__noItems}>Brak repozytoriów do wyświetlenia</h1>
                 )}
         </>
     )
