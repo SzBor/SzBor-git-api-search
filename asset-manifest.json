@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/SzBor-git-api-search/static/css/main.36364a72.chunk.css",
-    "main.js": "/SzBor-git-api-search/static/js/main.dd11d7ce.chunk.js",
-    "main.js.map": "/SzBor-git-api-search/static/js/main.dd11d7ce.chunk.js.map",
+    "main.js": "/SzBor-git-api-search/static/js/main.6bfbe1ad.chunk.js",
+    "main.js.map": "/SzBor-git-api-search/static/js/main.6bfbe1ad.chunk.js.map",
     "runtime-main.js": "/SzBor-git-api-search/static/js/runtime-main.b417b47d.js",
     "runtime-main.js.map": "/SzBor-git-api-search/static/js/runtime-main.b417b47d.js.map",
     "static/js/2.4f8f2ebe.chunk.js": "/SzBor-git-api-search/static/js/2.4f8f2ebe.chunk.js",
@@ -16,6 +16,6 @@
     "static/js/runtime-main.b417b47d.js",
     "static/js/2.4f8f2ebe.chunk.js",
     "static/css/main.36364a72.chunk.css",
-    "static/js/main.dd11d7ce.chunk.js"
+    "static/js/main.6bfbe1ad.chunk.js"
   ]
 }
