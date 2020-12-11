@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/SzBor.github.io/SzBor-git-api-search/static/css/main.72e05511.chunk.css",
+    "main.js": "/SzBor.github.io/SzBor-git-api-search/static/js/main.ebe68eb1.chunk.js",
+    "main.js.map": "/SzBor.github.io/SzBor-git-api-search/static/js/main.ebe68eb1.chunk.js.map",
+    "runtime-main.js": "/SzBor.github.io/SzBor-git-api-search/static/js/runtime-main.83aea835.js",
+    "runtime-main.js.map": "/SzBor.github.io/SzBor-git-api-search/static/js/runtime-main.83aea835.js.map",
+    "static/js/2.380597e0.chunk.js": "/SzBor.github.io/SzBor-git-api-search/static/js/2.380597e0.chunk.js",
+    "static/js/2.380597e0.chunk.js.map": "/SzBor.github.io/SzBor-git-api-search/static/js/2.380597e0.chunk.js.map",
+    "index.html": "/SzBor.github.io/SzBor-git-api-search/index.html",
+    "static/css/main.72e05511.chunk.css.map": "/SzBor.github.io/SzBor-git-api-search/static/css/main.72e05511.chunk.css.map",
+    "static/js/2.380597e0.chunk.js.LICENSE.txt": "/SzBor.github.io/SzBor-git-api-search/static/js/2.380597e0.chunk.js.LICENSE.txt",
+    "static/media/44950858_10156542105677347_7024185735754285056_o.e1095aad.jpg": "/SzBor.github.io/SzBor-git-api-search/static/media/44950858_10156542105677347_7024185735754285056_o.e1095aad.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.83aea835.js",
+    "static/js/2.380597e0.chunk.js",
+    "static/css/main.72e05511.chunk.css",
+    "static/js/main.ebe68eb1.chunk.js"
+  ]
+}
