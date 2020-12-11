@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import styles from "./Form.module.scss";
 import AppContext from '../../context';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -6,9 +6,23 @@ import { faSearch } from '@fortawesome/free-solid-svg-icons'
 
 
 const Form = () => {
-    const appContext = useContext(AppContext)
-    const { handleSubmit, handleSearchChange } = appContext
+    const [userName, setUsername] = useState('')
 
+    const appContext = useContext(AppContext)
+    const { fetchRepos } = appContext
+
+    const handleSearchChange = (e) => {
+        setUsername(e.target.value)
+    }
+    const resetInputField = () => {
+        setUsername("")
+    }
+    const handleSubmit = e => {
+        e.preventDefault();
+        fetchRepos(userName);
+        resetInputField();
+
+    }
 
     return (
         <AppContext.Consumer>
@@ -25,8 +39,6 @@ const Form = () => {
                         <button><FontAwesomeIcon icon={faSearch} /></button>
                     </form>
                     {context.error ? <div className={styles.formWrapper__errorBox}><h3>Podano złą nazwę użtkownika</h3></div> : <></>}
-                    {context.errorRequest ? <div className={styles.formWrapper__errorBox}><h3>Brak odpowiedzi z servera</h3></div> : <></>}
-
                 </div>
             )}
 

@@ -6,11 +6,6 @@ import styles from "./InnerListItem.module.scss";
 
 const InnerListItem = (props) => {
 
-
-  console.log(props)
-  console.log(props.commit)
-
-
   return (
     <>
 

@@ -7,7 +7,7 @@ import InnerList from "../InnerList/InnerList";
 
 const ListItem = (props) => {
   const [commits, setCommits] = useState([]);
-  const [error, setError] = useState('')
+
 
   const fetchData = async () => {
 
@@ -21,8 +21,6 @@ const ListItem = (props) => {
 
     fetchData()
   }, [props.full_name])
-
-  console.log(commits)
 
   return (
     <>

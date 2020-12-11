@@ -5,8 +5,6 @@ import styles from "./InnerList.module.scss";
 
 
 const InnerList = ({ items }) => {
-
-    console.log(items)
  
     return (
         <>
