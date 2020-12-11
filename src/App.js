@@ -5,7 +5,7 @@ import MainView from "./views/MainView/MainView";
 import axios from 'axios';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import AboutView from "./views/AboutView/AboutView";
-
+import dataReducer from "./dataReducer"
 
 
 const initialState = {
@@ -13,33 +13,11 @@ const initialState = {
   error: false
 };
 
-const reducer = (state, action) => {
-  switch (action.type) {
-    case "GET_REPOS_REQUEST":
-      return {
-        ...state,
-        error: false,
-      };
-    case "GET_REPOS_SUCCESS":
-      return {
-        ...state,
-        repos: action.payload,
-      };
-    case "GET_REPOS_FAILURE":
-      return {
-        ...state,
-        error: action.error,
-      };
-    default:
-      return state;
-  }
-};
+
 
 function App() {
 
-  const [state, dispatch] = useReducer(reducer, initialState);
-
-
+  const [state, dispatch] = useReducer(dataReducer, initialState);
 
   const fetchRepos = userName => {
     dispatch({
@@ -61,18 +39,7 @@ function App() {
           error: true
         });
       })
-
-
-
-
   }
-
-
-
-
-
-
-
 
   const contextElements = {
     repos: state.repos.slice(0, 5),
