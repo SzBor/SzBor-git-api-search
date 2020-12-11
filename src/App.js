@@ -14,7 +14,6 @@ const initialState = {
 };
 
 
-
 function App() {
 
   const [state, dispatch] = useReducer(dataReducer, initialState);
@@ -31,6 +30,7 @@ function App() {
             type: "GET_REPOS_SUCCESS",
             payload: resp.data
           })
+          console.log(resp.data)
         })
         .catch(err => {
           console.log(err.message)
@@ -44,9 +44,6 @@ function App() {
 
 
 
-
-
-  
   const contextElements = {
     repos: state.repos.slice(0, 5),
     error: state.error,

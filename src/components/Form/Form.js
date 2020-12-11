@@ -43,7 +43,6 @@ const Form = () => {
                     {context.error ? <div className={styles.formWrapper__errorBox}><h3>Podano złą nazwę użtkownika</h3></div> : <></>}
                 </div>
             )}
-
         </AppContext.Consumer>
     )
 }

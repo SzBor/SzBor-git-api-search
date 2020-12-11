@@ -30,7 +30,6 @@ const AboutView = () => (
     </div>
 
       <NavLink className={styles.navWrapper__button} to="/">Powrót do strony głownej</NavLink>
-   
   </>
 );
 

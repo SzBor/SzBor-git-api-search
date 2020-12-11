@@ -5,7 +5,7 @@ import styles from "./InnerList.module.scss";
 
 
 const InnerList = ({ items }) => {
- 
+
     return (
         <>
             {items.length ? (
@@ -19,7 +19,7 @@ const InnerList = ({ items }) => {
                     </ul>
                 </div>
             ) : (
-                    <h1 className={styles.innerListWrapper__noItems}>Brak commitów w tym repozytorium</h1>
+                    <h1 className={styles.noItems}>Brak commitów w tym repozytorium</h1>
                 )}
         </>
     )

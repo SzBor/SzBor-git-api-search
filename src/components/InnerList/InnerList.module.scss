@@ -9,16 +9,6 @@
       }
     }
   }
-
-  .innerListWrapper__noItems {
-    font-size: 1.2em;
-    color: darkgrey;
-    display: block;
-    width: 100%;
-    margin-top: 100px;
-    text-align: center;
-  }
-
   .innerListWrapper__header {
     font-size: 1em;
     color: rgb(80, 80, 80);
@@ -31,7 +21,6 @@
     margin-left:1em;
   }
   }
-
   .innerListWrapper__list{
 
     li:nth-child(even){
@@ -41,5 +30,12 @@
     li:not(:first-child) {
       margin-top:3em;
     }
-
+  }
+  .noItems {
+    font-size: 1.2em;
+    color: darkgrey;
+    display: block;
+    width: 100%;
+    margin-top: 100px;
+    text-align: center;
   }
