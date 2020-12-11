@@ -52,7 +52,7 @@ function App() {
 
 
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/">
       <Header />
       <AppContext.Provider value={contextElements}>
         <Switch>
