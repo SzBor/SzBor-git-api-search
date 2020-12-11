@@ -13,7 +13,7 @@ const InnerList = ({ items }) => {
                     <h1 className={styles.innerListWrapper__header}>Ostatnie 5 commitów:</h1>
                     <ul className={styles.innerListWrapper__list}>
                         {items.map(item => (
-                            <InnerListItem key={item.id} {...item} />
+                            <InnerListItem key={item.sha} {...item} />
                         )
                         )}
                     </ul>

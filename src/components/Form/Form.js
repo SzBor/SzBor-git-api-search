@@ -15,7 +15,7 @@ const Form = () => {
         setUsername(e.target.value)
     }
     const resetInputField = () => {
-        setUsername("")
+        setUsername('')
     }
     const handleSubmit = e => {
         e.preventDefault();
@@ -23,6 +23,7 @@ const Form = () => {
         resetInputField();
 
     }
+
 
     return (
         <AppContext.Consumer>
@@ -34,6 +35,7 @@ const Form = () => {
                             type="text"
                             onChange={(e) => handleSearchChange(e)}
                             placeholder="Nazwa na GitHub"
+                            value={userName}
                             required
                         />
                         <button><FontAwesomeIcon icon={faSearch} /></button>

@@ -3,7 +3,7 @@ const dataReducer = (state, action) => {
         case "GET_REPOS_REQUEST":
             return {
                 ...state,
-                error: false,
+                error: "",
             };
         case "GET_REPOS_SUCCESS":
             return {

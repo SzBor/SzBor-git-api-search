@@ -10,7 +10,7 @@ import dataReducer from "./dataReducer"
 
 const initialState = {
   repos: [],
-  error: false
+  error: "",
 };
 
 
@@ -19,28 +19,34 @@ function App() {
 
   const [state, dispatch] = useReducer(dataReducer, initialState);
 
-  const fetchRepos = userName => {
-    dispatch({
-      type: "GET_REPOS_REQUEST"
-    });
 
-    axios.get(`https://api.github.com/users/${userName}/repos`, { params: { sort: "updated", order: "desc", page: 1 } })
-      .then(resp => {
-        dispatch({
-          type: "GET_REPOS_SUCCESS",
-          payload: resp.data
+    const fetchRepos = userName => {
+      dispatch({
+        type: "GET_REPOS_REQUEST"
+      });
+  
+      axios.get(`https://api.github.com/users/${userName}/repos`, { params: { sort: "updated", order: "desc", page: 1 } })
+        .then(resp => {
+          dispatch({
+            type: "GET_REPOS_SUCCESS",
+            payload: resp.data
+          })
         })
-      })
-      .catch(err => {
-        console.log(err.message)
+        .catch(err => {
+          console.log(err.message)
+  
+          dispatch({
+            type: "GET_REPOS_FAILURE",
+            error: err.message
+          });
+        })
+    }
 
-        dispatch({
-          type: "GET_REPOS_FAILURE",
-          error: true
-        });
-      })
-  }
 
+
+
+
+  
   const contextElements = {
     repos: state.repos.slice(0, 5),
     error: state.error,

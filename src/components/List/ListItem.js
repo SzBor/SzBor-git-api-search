@@ -12,7 +12,6 @@ const ListItem = (props) => {
   const fetchData = async () => {
 
       const resp = await axios.get(`https://api.github.com/repos/${props.full_name}/commits`, { params: { per_page: 5 } })
-
       setCommits([...resp.data])
     
   }
@@ -26,7 +25,7 @@ const ListItem = (props) => {
     <>
       <li className={styles.wrapper}>
         <div>
-          <Title><span class={styles.wrapper__description}>Nazwa:</span> {props.name}</Title>
+          <Title><span className={styles.wrapper__description}>Nazwa:</span> {props.name}</Title>
           <p className={styles.wrapper__description}>Ostatnia zmiana: {props.updated_at.slice(0, 10)}</p>
         </div>
       </li>
