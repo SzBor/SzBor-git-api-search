@@ -9,7 +9,7 @@ const InnerList = ({ items }) => {
     return (
         <>
             {items.length ? (
-                <div className={styles.innerListWrapper}>
+                <li className={styles.innerListWrapper}>
                     <h1 className={styles.innerListWrapper__header}>Ostatnie 5 commitów:</h1>
                     <ul className={styles.innerListWrapper__list}>
                         {items.map(item => (
@@ -17,7 +17,7 @@ const InnerList = ({ items }) => {
                         )
                         )}
                     </ul>
-                </div>
+                </li>
             ) : (
                     <h1 className={styles.noItems}>Brak commitów w tym repozytorium</h1>
                 )}
